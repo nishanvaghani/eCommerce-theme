@@ -1,33 +1,3 @@
-<?php
-
-$curl = curl_init();
-
-curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://fakestoreapi.com/products",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_HTTPHEADER => array(
-    "cache-control: no-cache",
-    "postman-token: fc95abb0-174e-278a-766e-1dbf76ff8fad"
-  ),
-));
-
-$response = curl_exec($curl);
-$err = curl_error($curl);
-
-curl_close($curl);
-
-if ($err) {
-  echo "cURL Error #:" . $err;
-} else {
-  echo $response;
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,19 +17,17 @@ if ($err) {
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-<!-- Link Swiper's CSS -->
-<!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+
 <!-- FONT AWESOME -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 <!-- AOS ANIMATED -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<!-- AMINATED CSS -->
-<!-- <link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-/> -->
-<!-- CUSTOME CSS -->
+
+<!-- CUSTOME CSS FORM SCSS -->
 <link rel="stylesheet" href="./assets/scss/style.css" />
+
+<!-- CUSTOME CSS FORM CSS -->
+<!-- <link rel="stylesheet" href="./assets/css/style.css" /> -->
 
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
@@ -70,27 +38,25 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <!---------------------- HEADER ------------------------->
 
     <!-- <header> -->
-        <section class="header"  >
-            <div class="container-fluid">
-                <!--- TOP HEADER SECTION ----->
-                <header id="header">
+    <section class="header">
+        <div class="container-fluid">
+            <!--- TOP HEADER SECTION ----->
+            <header id="header">
 
-                
+
                 <div class="row top_header">
                     <div class="col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12 col-12">
                         <div class="row justify-content-center d-flex align-items-center">
                             <div class="col-lg-3 col-md-3 d-sm-none d-none d-md-none d-lg-block">
                                 <div class="d-flex justify-content-start">
                                     <a href="#" class="text-decoration-none text-dark">About Us</a>
-                               <span class="px-2">|</span>
+                                    <span class="px-2">|</span>
                                     <a href="#" class="text-decoration-none text-dark">Order Tracking</a>
                                 </div>
                             </div>
                             <div class="col-lg-5 col-md-12 col-12 col-sm-12">
                                 <div class="d-flex justify-content-center">
-                                    <!-- <div class="swiper middel-header"> -->
-                                    <!-- <div class="swiper-wrapper">
-                                            <div class="swiper-slide"> -->
+
                                     <div class="d-flex">
                                         <i class="fa-solid fa-bell p-1"></i>
                                         <p class="text-center">
@@ -99,26 +65,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             <a href="#" class="text-decoration-none">Shop Now</a>
                                         </p>
                                     </div>
-                                    <!-- </div> -->
-                                    <!-- <div class="swiper-slide"> 
-                                                <div class="d-flex">
-                                                    <i class="fa-solid fa-gear p-1"></i>
-                                                    <p>
-                                                        <span>Super values deals</span>Save with more
-                                                        coupens
-                                                    </p>
-                                                </div>
-                                            </div> -->
-                                    <!-- </div>
-                                    <div class="swiper-pagination"></div>
-                                    </div> -->
+
                                 </div>
                             </div>
                             <div class="col-lg-4 col-sm-4 d-sm-none d-none d-md-none d-lg-block">
                                 <div class="d-flex float-end flex-wrap justify-content-end align-items-center">
                                     <div>
                                         <p class="mb-0">
-                                            Need help? Call Us: <span>1900 - 888</span>   <span class="px-2">|</span>
+                                            Need help? Call Us: <span>1900 - 888</span> <span class="px-2">|</span>
 
                                         </p>
                                     </div>
@@ -200,10 +154,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
 
                                         <div class="dropdown">
-                                            <a class="nav-link dropbtn text-decoration-none p-0 text-dark  d-flex flex-wrap" href="#"> <i
-                                                    class="fa-solid fa-cart-shopping fs-4 px-1 "></i>
-                                                    <span class="count_round">0</span>
-                                                    <p class=" d-md-none d-none d-sm-none d-lg-none d-xl-block">cart</p></a>
+                                            <a class="nav-link dropbtn text-decoration-none p-0 text-dark  d-flex flex-wrap"
+                                                href="#"> <i class="fa-solid fa-cart-shopping fs-4 px-1 "></i>
+                                                <span class="count_round">0</span>
+                                                <p class=" d-md-none d-none d-sm-none d-lg-none d-xl-block">cart</p>
+                                            </a>
                                             <div class="dropdown-content border">
                                                 <a href="#" class="">No product in the cart</a>
 
@@ -216,11 +171,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
 
                                         <div class="dropdown">
-                                            <a class="nav-link dropbtn text-decoration-none p-0 text-dark  d-flex flex-wrap" href="#"> 
-                                                <i class="fa-solid fa-user fs-4 px-1"></i><p class=" d-md-none d-none d-sm-none d-lg-none d-xl-block">Account</p></a>
+                                            <a class="nav-link dropbtn text-decoration-none p-0 text-dark  d-flex flex-wrap"
+                                                href="#">
+                                                <i class="fa-solid fa-user fs-4 px-1"></i>
+                                                <p class=" d-md-none d-none d-sm-none d-lg-none d-xl-block">Account</p>
+                                            </a>
                                             <div class="dropdown-content border">
                                                 <a href="#" class=""><i class="fa-solid fa-user  px-1"></i>Login</a>
-                                                <a href="#" class=""><i class="fa-solid fa-user-check px-1"></i>Register</a>
+                                                <a href="#" class=""><i
+                                                        class="fa-solid fa-user-check px-1"></i>Register</a>
 
                                             </div>
                                         </div>
@@ -233,369 +192,355 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     </div>
                     <hr class="m-0" />
                 </div>
-            </div>
+        </div>
         </header>
-                <!-- BOTTOM HEADER -->
+        <!-- BOTTOM HEADER -->
 
 
-           
-                <nav id="nav">
-                    <div class="row bottom_header" >
-                        <div class="col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12 col-12">
-                            <div class="row ">
-                                <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-center">
-                                    <div class="">
-                                        <div class="dropdown bottom_header_dropdown ">
-                                            <a class="btn dropdown-toggle rounded-1" type="button" id="dropdownMenuButton2"
-                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="fa-solid fa-grid-2"></i> Browse All Category
-                                            </a>
-                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                                 <div class="row">
-                                                    <div class="col-lg-6 col-md-6 col-12 col-sm-6 ">
-                                                        <li class="border rounded-1 m-2">
-                                                            <a class="dropdown-item" href="#"><img
-                                                                    src="./assets/img/icon-1.png" alt="" class="m-2" />Milk
-                                                                & Dairies</a>
-                                                        </li>
-                                                        <li class="border rounded-1 m-2">
-                                                            <a class="dropdown-item" href="#"><img
-                                                                    src="./assets/img/icon-1.png" alt="" class="m-2" />Milk
-                                                                & Dairies</a>
-                                                        </li>
-                                                        <li class="border rounded-1 m-2">
-                                                            <a class="dropdown-item" href="#"><img
-                                                                    src="./assets/img/icon-1.png" alt="" class="m-2" />Milk
-                                                                & Dairies</a>
-                                                        </li>
-                                                        <li class="border rounded-1 m-2">
-                                                            <a class="dropdown-item" href="#"><img
-                                                                    src="./assets/img/icon-1.png" alt="" class="m-2" />Milk
-                                                                & Dairies</a>
-                                                        </li>
-                                                        <li class="border rounded-1 m-2">
-                                                            <a class="dropdown-item" href="#"><img
-                                                                    src="./assets/img/icon-1.png" alt="" class="m-2" />Milk
-                                                                & Dairies</a>
-                                                        </li>
-                                                        <li class="border rounded-1 m-2">
-                                                            <a class="dropdown-item" href="#"><img
-                                                                    src="./assets/img/icon-1.png" alt="" class="m-2" />Milk
-                                                                & Dairies</a>
-                                                        </li>
-                                                        <li class="border rounded-1 m-2">
-                                                            <a class="dropdown-item" href="#"><img
-                                                                    src="./assets/img/icon-1.png" alt="" class="m-2" />Milk
-                                                                & Dairies</a>
-                                                        </li>
-                                                    </div>
-                                                    <div class="col-lg-6 col-md-6 col-12 col-sm-6">
-                                                        <li class="border rounded-1 m-2">
-                                                            <a class="dropdown-item" href="#"><img
-                                                                    src="./assets/img/icon-1.png" alt="" class="m-2" />Milk
-                                                                & Dairies</a>
-                                                        </li>
-                                                        <li class="border rounded-1 m-2">
-                                                            <a class="dropdown-item" href="#"><img
-                                                                    src="./assets/img/icon-1.png" alt="" class="m-2" />Milk
-                                                                & Dairies</a>
-                                                        </li>
-                                                        <li class="border rounded-1 m-2">
-                                                            <a class="dropdown-item" href="#"><img
-                                                                    src="./assets/img/icon-1.png" alt="" class="m-2" />Milk
-                                                                & Dairies</a>
-                                                        </li>
-                                                        <li class="border rounded-1 m-2">
-                                                            <a class="dropdown-item" href="#"><img
-                                                                    src="./assets/img/icon-1.png" alt="" class="m-2" />Milk
-                                                                & Dairies</a>
-                                                        </li>
-                                                        <li class="border rounded-1 m-2">
-                                                            <a class="dropdown-item" href="#"><img
-                                                                    src="./assets/img/icon-1.png" alt="" class="m-2" />Milk
-                                                                & Dairies</a>
-                                                        </li>
-                                                        <li class="border rounded-1 m-2">
-                                                            <a class="dropdown-item" href="#"><img
-                                                                    src="./assets/img/icon-1.png" alt="" class="m-2" />Milk
-                                                                & Dairies</a>
-                                                        </li>
-                                                        <li class="border rounded-1 m-2">
-                                                            <a class="dropdown-item" href="#"><img
-                                                                    src="./assets/img/icon-1.png" alt="" class="m-2" />Milk
-                                                                & Dairies</a>
-                                                        </li>
-                                                    </div>
-                                                </div> 
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-10 col-xl-9 col-lg-9 col-md-8 col-sm-6 col-6 middle_bottom_header">
-                                    <nav class="navbar navbar-expand-lg justify-content-end d-flex">
-                                        <!-- <button class="navbar-toggler mx-2" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                            aria-expanded="false" aria-label="Toggle navigation">
-                                            <span class="navbar-toggler-icon"></span>              
-                                        </button> -->
-    
-                                        <!-- The overlay -->
-                                        <div id="myNav" class="overlay ">
-                                            <!-- Button to close the overlay navigation -->
-                                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                                            <!-- SMALL SCREEN NAVBAR -->
-                                            <!-- Overlay content -->
-                                            <div class="overlay-content">
-                                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                                    <li class="nav-item ">
-                                                        <!-- <div class="dropdown">
-                                                            <a class="nav-link dropbtn text-decoration-none  fs-3"
-                                                                href="#">Home<i
-                                                                    class="fa-solid fa-angle-down p-1 fs-6"></i></a>
-                                                            <div class="dropdown-content ">
-                                                                <a href="#">Link 1</a>
-                                                                <a href="#">Link 2</a>
-                                                                <a href="#">Link 3</a>
-                                                            </div>
-                                                        </div> -->
-                                                        <div class="dropdown">
-                                                            <a class="btn  dropdown-toggle  " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                         Shop
-                                                            </a>
-                                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                              <li><a class="dropdown-item" href="#">Action</a></li>
-                                                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                                            </ul>
-                                                          </div>
-                                                    </li>
-    
-                                                    <li class="nav-item">
-                                                        <div class="dropdown">
-                                                            <a class="btn  dropdown-toggle  " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        Store
-                                                            </a>
-                                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                              <li><a class="dropdown-item" href="#">Action</a></li>
-                                                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                                            </ul>
-                                                          </div>
-                                                    </li>
-    
-                                                    <li class="nav-item">
-                                                        <div class="dropdown">
-                                                            <a class="btn  dropdown-toggle  " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        Product
-                                                            </a>
-                                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                              <li><a class="dropdown-item" href="#">Action</a></li>
-                                                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                                            </ul>
-                                                          </div>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <div class="dropdown">
-                                                            <a class="btn  dropdown-toggle  " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                         Blog
-                                                            </a>
-                                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                              <li><a class="dropdown-item" href="#">Action</a></li>
-                                                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                                            </ul>
-                                                          </div>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <div class="dropdown">
-                                                            <a class="btn  dropdown-toggle  " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                         FAQ
-                                                            </a>
-                                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                              <li><a class="dropdown-item" href="#">Action</a></li>
-                                                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                                            </ul>
-                                                          </div>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <div class="dropdown">
-                                                            <a class="btn  dropdown-toggle  " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        Contact
-                                                            </a>
-                                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                              <li><a class="dropdown-item" href="#">Action</a></li>
-                                                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                                            </ul>
-                                                          </div>
-                                                    </li>
-                                                </ul>
+
+        <nav id="nav">
+            <div class="row bottom_header">
+                <div class="col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12 col-12">
+                    <div class="row ">
+                        <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-center">
+                            <div class="">
+                                <div class="dropdown bottom_header_dropdown ">
+                                    <a class="btn dropdown-toggle rounded-1" type="button" id="dropdownMenuButton2"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-grid-2"></i> Browse All Category
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-12 col-sm-6 ">
+                                                <li class="border rounded-1 m-2">
+                                                    <a class="dropdown-item" href="#"><img src="./assets/img/icon-1.png"
+                                                            alt="" class="m-2" />Milk
+                                                        & Dairies</a>
+                                                </li>
+                                                <li class="border rounded-1 m-2">
+                                                    <a class="dropdown-item" href="#"><img src="./assets/img/icon-1.png"
+                                                            alt="" class="m-2" />Milk
+                                                        & Dairies</a>
+                                                </li>
+                                                <li class="border rounded-1 m-2">
+                                                    <a class="dropdown-item" href="#"><img src="./assets/img/icon-1.png"
+                                                            alt="" class="m-2" />Milk
+                                                        & Dairies</a>
+                                                </li>
+                                                <li class="border rounded-1 m-2">
+                                                    <a class="dropdown-item" href="#"><img src="./assets/img/icon-1.png"
+                                                            alt="" class="m-2" />Milk
+                                                        & Dairies</a>
+                                                </li>
+                                                <li class="border rounded-1 m-2">
+                                                    <a class="dropdown-item" href="#"><img src="./assets/img/icon-1.png"
+                                                            alt="" class="m-2" />Milk
+                                                        & Dairies</a>
+                                                </li>
+                                                <li class="border rounded-1 m-2">
+                                                    <a class="dropdown-item" href="#"><img src="./assets/img/icon-1.png"
+                                                            alt="" class="m-2" />Milk
+                                                        & Dairies</a>
+                                                </li>
+                                                <li class="border rounded-1 m-2">
+                                                    <a class="dropdown-item" href="#"><img src="./assets/img/icon-1.png"
+                                                            alt="" class="m-2" />Milk
+                                                        & Dairies</a>
+                                                </li>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-12 col-sm-6">
+                                                <li class="border rounded-1 m-2">
+                                                    <a class="dropdown-item" href="#"><img src="./assets/img/icon-1.png"
+                                                            alt="" class="m-2" />Milk
+                                                        & Dairies</a>
+                                                </li>
+                                                <li class="border rounded-1 m-2">
+                                                    <a class="dropdown-item" href="#"><img src="./assets/img/icon-1.png"
+                                                            alt="" class="m-2" />Milk
+                                                        & Dairies</a>
+                                                </li>
+                                                <li class="border rounded-1 m-2">
+                                                    <a class="dropdown-item" href="#"><img src="./assets/img/icon-1.png"
+                                                            alt="" class="m-2" />Milk
+                                                        & Dairies</a>
+                                                </li>
+                                                <li class="border rounded-1 m-2">
+                                                    <a class="dropdown-item" href="#"><img src="./assets/img/icon-1.png"
+                                                            alt="" class="m-2" />Milk
+                                                        & Dairies</a>
+                                                </li>
+                                                <li class="border rounded-1 m-2">
+                                                    <a class="dropdown-item" href="#"><img src="./assets/img/icon-1.png"
+                                                            alt="" class="m-2" />Milk
+                                                        & Dairies</a>
+                                                </li>
+                                                <li class="border rounded-1 m-2">
+                                                    <a class="dropdown-item" href="#"><img src="./assets/img/icon-1.png"
+                                                            alt="" class="m-2" />Milk
+                                                        & Dairies</a>
+                                                </li>
+                                                <li class="border rounded-1 m-2">
+                                                    <a class="dropdown-item" href="#"><img src="./assets/img/icon-1.png"
+                                                            alt="" class="m-2" />Milk
+                                                        & Dairies</a>
+                                                </li>
                                             </div>
                                         </div>
-    
-                                        <!-- Use any element to open/show the overlay navigation menu -->
-                                        <span onclick="openNav()">
-                                            <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
-                                                <span class="navbar-toggler-icon"></span></button></span>
-    
-    
-    
-                                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                                <li class="nav-item">
-                                                    <div class="dropdown">
-                                                        <a class="nav-link dropbtn" href="#">Home<i
-                                                                class="fa-solid fa-angle-down p-1 fs-6"></i></a>
-                                                        <div class="dropdown-content">
-                                                            <a href="#">Link 1</a> 
-                                                            <a href="#">Link 2</a>
-                                                            <a href="#">Link 3</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-    
-                                                <li class="nav-item">
-                                                    <div class="dropdown">
-                                                        <a class="nav-link dropbtn" href="#">Shop<i
-                                                                class="fa-solid fa-angle-down p-1 fs-6"></i></a>
-                                                        <div class="dropdown-content">
-                                                            <a href="#">Link 1</a>
-                                                            <a href="#">Link 2</a>
-                                                            <a href="#">Link 3</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-    
-                                                <li class="nav-item">
-                                                    <div class="dropdown">
-                                                        <a class="nav-link dropbtn" href="#">Store<i
-                                                                class="fa-solid fa-angle-down p-1 fs-6"></i></a>
-                                                        <div class="dropdown-content">
-                                                            <a href="#">Link 1</a>
-                                                            <a href="#">Link 2</a>
-                                                            <a href="#">Link 3</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <div class="dropdown">
-                                                        <a class="nav-link dropbtn" href="#">Product<i
-                                                                class="fa-solid fa-angle-down p-1 fs-6"></i></a>
-                                                        <div class="dropdown-content">
-                                                            <a href="#">Link 1</a>
-                                                            <a href="#">Link 2</a>
-                                                            <a href="#">Link 3</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <div class="dropdown">
-                                                        <a class="nav-link dropbtn" href="#">FAQ<i
-                                                                class="fa-solid fa-angle-down p-1 fs-6"></i></a>
-                                                        <div class="dropdown-content">
-                                                            <a href="#">Link 1</a>
-                                                            <a href="#">Link 2</a>
-                                                            <a href="#">Link 3</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <div class="dropdown">
-                                                        <a class="nav-link dropbtn" href="#">Contact<i
-                                                                class="fa-solid fa-angle-down p-1 fs-6"></i></a>
-                                                        <div class="dropdown-content">
-                                                            <a href="#">Link 1</a>
-                                                            <a href="#">Link 2</a>
-                                                            <a href="#">Link 3</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-    
-    
-    
-                                            <!-- <div class="col-lg-2 col-md-2 "> -->
-                                            <div class="d-flex align-items-center float-end">
-                                                <div>
-                                                    <i class="fa-solid fa-headset fs-1"></i>
-                                                </div>
-                                                <div class="px-2 support_center">
-                                                    <p class="fs-4 support_number">1900 - 888</p>
-                                                    <p>24/7 Support Center</p>
-                                                </div>
-                                            </div>
-    
-                                            <!-- </div> -->
-                                        </div>
-    
-                                        <!-- Button trigger modal -->
-                                        <div class="d-block d-sm-block d-md-block d-lg-none float-end">
-                                            <button type="button " class="btn" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal">
-                                                <i class="fa-solid fa-magnifying-glass fs-5"></i>
-                                            </button>
-    
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="exampleModal" tabindex="-1"
-                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">
-                                                                Search Product
-                                                            </h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                                aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="srchbar border">
-                                                                <div class="justify-content-center d-flex py-2">
-                                                                    <div class="form d-flex align-items-center">
-                                                                        <select class="form-select form-select-sm border-0"
-                                                                            aria-label=".form-select-sm example">
-                                                                            <option selected>
-                                                                                Clothing & Beauty
-                                                                            </option>
-                                                                            <option value="1">One</option>
-                                                                            <option value="2">Two</option>
-                                                                            <option value="3">Three</option>
-                                                                        </select>
-                                                                    </div>
-                                                                    <form class="d-flex w-100 position-relative"
-                                                                        role="search">
-                                                                        <input class="form-control me-2 border-0"
-                                                                            type="search" placeholder="Search items..."
-                                                                            aria-label="Search" />
-                                                                        <button
-                                                                            class="btn border-0 position-absoulte bg-white text-dark"
-                                                                            type="submit">
-                                                                            <i
-                                                                                class="fa-solid fa-magnifying-glass fs-5"></i>
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </nav>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <hr class="m-0" />
+                        <div class="col-xxl-10 col-xl-9 col-lg-9 col-md-8 col-sm-6 col-6 middle_bottom_header">
+                            <nav class="navbar navbar-expand-lg justify-content-end d-flex">
+                                <!-- The overlay -->
+                                <div id="myNav" class="overlay ">
+                                    <!-- Button to close the overlay navigation -->
+                                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                                    <!-- SMALL SCREEN NAVBAR -->
+                                    <!-- Overlay content -->
+                                    <div class="overlay-content">
+                                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                            <li class="nav-item ">
+
+                                                <div class="dropdown">
+                                                    <a class="btn  dropdown-toggle  " type="button"
+                                                        id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        Shop
+                                                    </a>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                        <li><a class="dropdown-item" href="#">Something else here</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <div class="dropdown">
+                                                    <a class="btn  dropdown-toggle  " type="button"
+                                                        id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        Store
+                                                    </a>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                        <li><a class="dropdown-item" href="#">Something else here</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <div class="dropdown">
+                                                    <a class="btn  dropdown-toggle  " type="button"
+                                                        id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        Product
+                                                    </a>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                        <li><a class="dropdown-item" href="#">Something else here</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item">
+                                                <div class="dropdown">
+                                                    <a class="btn  dropdown-toggle  " type="button"
+                                                        id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        Blog
+                                                    </a>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                        <li><a class="dropdown-item" href="#">Something else here</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item">
+                                                <div class="dropdown">
+                                                    <a class="btn  dropdown-toggle  " type="button"
+                                                        id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        FAQ
+                                                    </a>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                        <li><a class="dropdown-item" href="#">Something else here</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item">
+                                                <div class="dropdown">
+                                                    <a class="btn  dropdown-toggle  " type="button"
+                                                        id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                        Contact
+                                                    </a>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                        <li><a class="dropdown-item" href="#">Something else here</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Use any element to open/show the overlay navigation menu -->
+                                <span onclick="openNav()">
+                                    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span></button></span>
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                        <li class="nav-item">
+                                            <div class="dropdown">
+                                                <a class="nav-link dropbtn" href="#">Home<i
+                                                        class="fa-solid fa-angle-down p-1 fs-6"></i></a>
+                                                <div class="dropdown-content">
+                                                    <a href="#">Link 1</a>
+                                                    <a href="#">Link 2</a>
+                                                    <a href="#">Link 3</a>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <div class="dropdown">
+                                                <a class="nav-link dropbtn" href="#">Shop<i
+                                                        class="fa-solid fa-angle-down p-1 fs-6"></i></a>
+                                                <div class="dropdown-content">
+                                                    <a href="#">Link 1</a>
+                                                    <a href="#">Link 2</a>
+                                                    <a href="#">Link 3</a>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <div class="dropdown">
+                                                <a class="nav-link dropbtn" href="#">Store<i
+                                                        class="fa-solid fa-angle-down p-1 fs-6"></i></a>
+                                                <div class="dropdown-content">
+                                                    <a href="#">Link 1</a>
+                                                    <a href="#">Link 2</a>
+                                                    <a href="#">Link 3</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <div class="dropdown">
+                                                <a class="nav-link dropbtn" href="#">Product<i
+                                                        class="fa-solid fa-angle-down p-1 fs-6"></i></a>
+                                                <div class="dropdown-content">
+                                                    <a href="#">Link 1</a>
+                                                    <a href="#">Link 2</a>
+                                                    <a href="#">Link 3</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <div class="dropdown">
+                                                <a class="nav-link dropbtn" href="#">FAQ<i
+                                                        class="fa-solid fa-angle-down p-1 fs-6"></i></a>
+                                                <div class="dropdown-content">
+                                                    <a href="#">Link 1</a>
+                                                    <a href="#">Link 2</a>
+                                                    <a href="#">Link 3</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <div class="dropdown">
+                                                <a class="nav-link dropbtn" href="#">Contact<i
+                                                        class="fa-solid fa-angle-down p-1 fs-6"></i></a>
+                                                <div class="dropdown-content">
+                                                    <a href="#">Link 1</a>
+                                                    <a href="#">Link 2</a>
+                                                    <a href="#">Link 3</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="d-flex align-items-center float-end">
+                                        <div>
+                                            <i class="fa-solid fa-headset fs-1"></i>
+                                        </div>
+                                        <div class="px-2 support_center">
+                                            <p class="fs-4 support_number">1900 - 888</p>
+                                            <p>24/7 Support Center</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Button trigger modal -->
+                                <div class="d-block d-sm-block d-md-block d-lg-none float-end">
+                                    <button type="button " class="btn" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                        <i class="fa-solid fa-magnifying-glass fs-5"></i>
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                        Search Product
+                                                    </h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="srchbar border">
+                                                        <div class="justify-content-center d-flex py-2">
+                                                            <div class="form d-flex align-items-center">
+                                                                <select class="form-select form-select-sm border-0"
+                                                                    aria-label=".form-select-sm example">
+                                                                    <option selected>
+                                                                        Clothing & Beauty
+                                                                    </option>
+                                                                    <option value="1">One</option>
+                                                                    <option value="2">Two</option>
+                                                                    <option value="3">Three</option>
+                                                                </select>
+                                                            </div>
+                                                            <form class="d-flex w-100 position-relative" role="search">
+                                                                <input class="form-control me-2 border-0" type="search"
+                                                                    placeholder="Search items..." aria-label="Search" />
+                                                                <button
+                                                                    class="btn border-0 position-absoulte bg-white text-dark"
+                                                                    type="submit">
+                                                                    <i class="fa-solid fa-magnifying-glass fs-5"></i>
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
                     </div>
-                </nav>
-
-
-              
+                </div>
+                <hr class="m-0" />
             </div>
-        </section>
-    <!-- </header> -->
-    <!--MAIN -->
+        </nav>
+        </div>
+    </section>
     <main>
         <!--------- MAIN BANNER SECTION ----->
 
@@ -604,7 +549,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1">
                         <div class="row py-5">
-                            <div class="col-lg-12 col-xl-8"  data-aos="fade-up-right"   data-aos-duration="3000">
+                            <div class="col-lg-12 col-xl-8" data-aos="fade-up-right" data-aos-duration="3000">
                                 <div class="owl-carousel owl-theme banner_main" id="banner_img">
                                     <div class="item">
                                         <div class="main_img">
@@ -665,7 +610,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 d-none d-sm-none d-md-none d-lg-none d-xl-block" data-aos="fade-up-left"   data-aos-duration="3000">
+                            <div class="col-lg-4 d-none d-sm-none d-md-none d-lg-none d-xl-block"
+                                data-aos="fade-up-left" data-aos-duration="3000">
                                 <div class="side_img rounded-4">
                                     <div class="side_text">
                                         <div class="side_title">
@@ -693,7 +639,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1">
                         <div class="row">
-                            <div class="col-xl-4 col-lg-6 col-12 col-sm-12 col-md-6" data-aos="fade-up"    data-aos-duration="1000">
+                            <div class="col-xl-4 col-lg-6 col-12 col-sm-12 col-md-6" data-aos="fade-up"
+                                data-aos-duration="1000">
                                 <div class="product_main">
                                     <div>
                                         <img src="./assets/img/1.png" alt="" class="w-100 rounded-4" />
@@ -707,7 +654,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-lg-6 col-12 col-sm-12 col-md-6" data-aos="fade-up"    data-aos-duration="1000">
+                            <div class="col-xl-4 col-lg-6 col-12 col-sm-12 col-md-6" data-aos="fade-up"
+                                data-aos-duration="1000">
                                 <div class="product_main">
                                     <div>
                                         <img src="./assets/img/2.png" alt="" class="w-100 rounded-4" />
@@ -721,7 +669,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-lg-6 col-12 col-sm-12 col-md-6" data-aos="fade-up"    data-aos-duration="1000">
+                            <div class="col-xl-4 col-lg-6 col-12 col-sm-12 col-md-6" data-aos="fade-up"
+                                data-aos-duration="1000">
                                 <div class="product_main">
                                     <div>
                                         <img src="./assets/img/3.png" alt="" class="w-100 rounded-4" />
@@ -751,14 +700,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     <div class="col-lg-10 offset-lg-1">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-xl-3 col-sm-6 col-12">
-                                <div class="card my-2 " >
+                                <div class="card my-2 ">
                                     <div class="top_discount">
                                         <p class="m-1 text-center">-20%</p>
                                     </div>
-                                    <div data-aos="flip-left"
-                                    data-aos-easing="ease-out-cubic"
-                                    data-aos-duration="2000">
-                                        <img src="./assets/img/2-400x400.jpg" class="card-img-top w-100" alt="..."  />
+                                    <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                                        <img src="./assets/img/2-400x400.jpg" class="card-img-top w-100" alt="..." />
                                     </div>
                                     <div class="card-body">
                                         <h6 class="card-title">
@@ -786,11 +733,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                         </div>
                                     </div>
-
-
-
-
-
                                     <div class="action_icon bg-light">
                                         <div class="p-2 icon_grp">
                                             <button type="button" class="btn p-0 m-0" data-bs-toggle="modal"
@@ -799,7 +741,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </button>
 
                                         </div>
-
 
                                         <div class="p-2 icon_grp">
                                             <a href="" class="text-decoration-none" data-bs-toggle="tooltip"
@@ -821,9 +762,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     <div class="top_discount">
                                         <p class="m-1 text-center">-20%</p>
                                     </div>
-                                    <div data-aos="flip-left"
-                                    data-aos-easing="ease-out-cubic"
-                                    data-aos-duration="2000">
+                                    <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                                         <img src="./assets/img/4-400x400.jpg" class="card-img-top w-100" alt="..." />
                                     </div>
                                     <div class="card-body">
@@ -881,9 +820,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     <div class="top_discount">
                                         <p class="m-1 text-center">-20%</p>
                                     </div>
-                                    <div data-aos="flip-left"
-                                    data-aos-easing="ease-out-cubic"
-                                    data-aos-duration="2000">
+                                    <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                                         <img src="./assets/img/6-400x400.jpg" class="card-img-top w-100" alt="..." />
                                     </div>
                                     <div class="card-body">
@@ -940,9 +877,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     <div class="top_discount">
                                         <p class="m-1 text-center">-20%</p>
                                     </div>
-                                    <div data-aos="flip-left"
-                                    data-aos-easing="ease-out-cubic"
-                                    data-aos-duration="2000">
+                                    <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                                         <img src="./assets/img/8-400x400.jpg" class="card-img-top w-100" alt="..." />
                                     </div>
                                     <div class="card-body">
@@ -1000,9 +935,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     <div class="top_discount">
                                         <p class="m-1 text-center">-20%</p>
                                     </div>
-                                    <div data-aos="flip-left"
-                                    data-aos-easing="ease-out-cubic"
-                                    data-aos-duration="2000">
+                                    <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                                         <img src="./assets/img/10-400x400.jpg" class="card-img-top w-100" alt="..." />
                                     </div>
                                     <div class="card-body">
@@ -1059,9 +992,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     <div class="top_discount">
                                         <p class="m-1 text-center">-20%</p>
                                     </div>
-                                    <div data-aos="flip-left"
-                                    data-aos-easing="ease-out-cubic"
-                                    data-aos-duration="2000">
+                                    <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                                         <img src="./assets/img/12-400x400.jpg" class="card-img-top w-100" alt="..." />
                                     </div>
                                     <div class="card-body">
@@ -1118,9 +1049,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     <div class="top_discount">
                                         <p class="m-1 text-center">-20%</p>
                                     </div>
-                                    <div data-aos="flip-left"
-                                    data-aos-easing="ease-out-cubic"
-                                    data-aos-duration="2000">
+                                    <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                                         <img src="./assets/img/14-400x400.jpg" class="card-img-top w-100" alt="..." />
                                     </div>
                                     <div class="card-body">
@@ -1177,9 +1106,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     <div class="top_discount">
                                         <p class="m-1 text-center">-20%</p>
                                     </div>
-                                    <div data-aos="flip-left"
-                                    data-aos-easing="ease-out-cubic"
-                                    data-aos-duration="2000">
+                                    <div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                                         <img src="./assets/img/16-400x400.jpg" class="card-img-top w-100" alt="..." />
                                     </div>
                                     <div class="card-body">
@@ -1246,9 +1173,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     </div>
                     <div class="col-lg-10 offset-lg-1">
                         <div class="row py-3">
-                            <div class="col-xl-3 d-xl-block d-lg-none d-md-none d-sm-none d-none" data-aos="fade-right" 
-                            data-aos-offset="300"
-                            data-aos-easing="ease-in-sine">
+                            <div class="col-xl-3 d-xl-block d-lg-none d-md-none d-sm-none d-none" data-aos="fade-right"
+                                data-aos-offset="300" data-aos-easing="ease-in-sine">
                                 <div class="side_banner_img">
                                     <div>
                                         <img class="bannerimg rounded-4" src="./assets/img/4.png" alt="" />
@@ -1268,9 +1194,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 col-12" data-aos="fade-left" 
-                            data-aos-offset="300"
-                            data-aos-easing="ease-in-sine">
+                            <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 col-12" data-aos="fade-left"
+                                data-aos-offset="300" data-aos-easing="ease-in-sine">
                                 <div class="owl-carousel owl-theme" id="daily_sale">
                                     <div class="item">
                                         <div class="card">
@@ -1279,7 +1204,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                             <div class="hover-switch">
                                                 <img class="front-image card-img-top" src="./assets/img/t1.jpg" />
-                                                <!-- <img class="back-image card-img-top" src="./assets/img/tt1.jpg"/> -->
                                             </div>
 
                                             <div class="card-body">
@@ -1346,7 +1270,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                             <div class="hover-switch">
                                                 <img class="front-image card-img-top" src="./assets/img/t1.jpg" />
-                                                <!-- <img class="back-image card-img-top" src="./assets/img/tt1.jpg"/> -->
                                             </div>
 
                                             <div class="card-body">
@@ -1413,7 +1336,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                             <div class="hover-switch">
                                                 <img class="front-image card-img-top" src="./assets/img/t1.jpg" />
-                                                <!-- <img class="back-image card-img-top" src="./assets/img/tt1.jpg"/> -->
                                             </div>
 
                                             <div class="card-body">
@@ -1480,7 +1402,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                             <div class="hover-switch">
                                                 <img class="front-image card-img-top" src="./assets/img/t1.jpg" />
-                                                <!-- <img class="back-image card-img-top" src="./assets/img/tt1.jpg"/> -->
                                             </div>
 
                                             <div class="card-body">
@@ -1547,7 +1468,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                             <div class="hover-switch">
                                                 <img class="front-image card-img-top" src="./assets/img/t1.jpg" />
-                                                <!-- <img class="back-image card-img-top" src="./assets/img/tt1.jpg"/> -->
                                             </div>
 
                                             <div class="card-body">
@@ -1614,7 +1534,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                             <div class="hover-switch">
                                                 <img class="front-image card-img-top" src="./assets/img/t1.jpg" />
-                                                <!-- <img class="back-image card-img-top" src="./assets/img/tt1.jpg"/> -->
                                             </div>
 
                                             <div class="card-body">
@@ -1681,7 +1600,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                             <div class="hover-switch">
                                                 <img class="front-image card-img-top" src="./assets/img/t1.jpg" />
-                                                <!-- <img class="back-image card-img-top" src="./assets/img/tt1.jpg"/> -->
                                             </div>
 
                                             <div class="card-body">
@@ -1748,7 +1666,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                             <div class="hover-switch">
                                                 <img class="front-image card-img-top" src="./assets/img/t1.jpg" />
-                                                <!-- <img class="back-image card-img-top" src="./assets/img/tt1.jpg"/> -->
                                             </div>
 
                                             <div class="card-body">
@@ -1828,10 +1745,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                     <div class="col-lg-10 offset-lg-1">
                         <div class="row">
                             <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="cardmain" data-aos="fade-down"
-                                data-aos-easing="linear"
-                                data-aos-duration="1500">
-                                    <div class="card border-0 d-flex justify-content-center align-items-center" >
+                                <div class="cardmain" data-aos="fade-down" data-aos-easing="linear"
+                                    data-aos-duration="1500">
+                                    <div class="card border-0 d-flex justify-content-center align-items-center">
                                         <div class="countdown d-flex justify-content-center align-items-center">
                                             <ul class="counter_day">
                                                 <li><span id="days"></span>days</li>
@@ -1876,9 +1792,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                 </div>
                             </div>
                             <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="cardmain" data-aos="fade-up"
-                                data-aos-easing="linear"
-                                data-aos-duration="1500">
+                                <div class="cardmain" data-aos="fade-up" data-aos-easing="linear"
+                                    data-aos-duration="1500">
                                     <div class="card border-0 d-flex justify-content-center align-items-center">
                                         <div class="countdown d-flex justify-content-center align-items-center">
                                             <ul class="counter_day">
@@ -1924,9 +1839,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                 </div>
                             </div>
                             <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="cardmain" data-aos="fade-down"
-                                data-aos-easing="linear"
-                                data-aos-duration="1500">
+                                <div class="cardmain" data-aos="fade-down" data-aos-easing="linear"
+                                    data-aos-duration="1500">
                                     <div class="card border-0 d-flex justify-content-center align-items-center">
                                         <div class="countdown d-flex justify-content-center align-items-center">
                                             <ul class="counter_day">
@@ -1972,9 +1886,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                 </div>
                             </div>
                             <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="cardmain" data-aos="fade-up"
-                                data-aos-easing="linear"
-                                data-aos-duration="1500">
+                                <div class="cardmain" data-aos="fade-up" data-aos-easing="linear"
+                                    data-aos-duration="1500">
                                     <div class="card border-0 d-flex justify-content-center align-items-center">
                                         <div class="countdown d-flex justify-content-center align-items-center">
                                             <ul class="counter_day">
@@ -2032,9 +1945,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1">
                         <div class="row">
-
-
-
                             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                                 <div>
                                     <h4>Top Selling</h4>
@@ -2042,9 +1952,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     <hr class="hr2" />
                                 </div>
                                 <div class="">
-                                    <div
-                                        class="card border-0 mt-4 text-center text-lg-start text-md-start text-sm-start" data-aos="fade-up"
-                                        data-aos-anchor-placement="center-bottom">
+                                    <div class="card border-0 mt-4 text-center text-lg-start text-md-start text-sm-start"
+                                        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                                         <div class="row g-0 ">
 
                                             <div class="col-md-4">
@@ -2052,7 +1961,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                                     alt="..." />
                                             </div>
                                             <div class="col-md-8">
-                                                <div class="card-body" >
+                                                <div class="card-body">
                                                     <h6 class="card-title">
                                                         <a href="#" class="text-decoration-none text-dark">Organic
                                                             Cage-Free Grade A Large Brown Eggs</a>
@@ -2074,9 +1983,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start" data-aos="fade-up"
-                                        data-aos-anchor-placement="center-bottom">
+                                    <div class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start"
+                                        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/img/22.jpg" class="img-fluid rounded-start"
@@ -2104,9 +2012,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                         </div>
                                     </div>
-                                    <div
-                                        class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start" data-aos="fade-up"
-                                        data-aos-anchor-placement="center-bottom">
+                                    <div class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start"
+                                        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/img/4-400x400.jpg" class="img-fluid rounded-start"
@@ -2134,9 +2041,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                         </div>
                                     </div>
-                                    <div
-                                        class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start" data-aos="fade-up"
-                                        data-aos-anchor-placement="center-bottom">
+                                    <div class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start"
+                                        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/img/33.jpg" class="img-fluid rounded-start"
@@ -2173,9 +2079,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     <hr class="hr2" />
                                 </div>
                                 <div>
-                                    <div
-                                        class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start" data-aos="fade-up"
-                                        data-aos-anchor-placement="center-bottom">
+                                    <div class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start"
+                                        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/img/11.jpg" class="img-fluid rounded-start"
@@ -2204,9 +2109,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start" data-aos="fade-up"
-                                        data-aos-anchor-placement="center-bottom">
+                                    <div class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start"
+                                        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/img/22.jpg" class="img-fluid rounded-start"
@@ -2234,9 +2138,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                         </div>
                                     </div>
-                                    <div
-                                        class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start" data-aos="fade-up"
-                                        data-aos-anchor-placement="center-bottom">
+                                    <div class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start"
+                                        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/img/4-400x400.jpg" class="img-fluid rounded-start"
@@ -2264,9 +2167,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                         </div>
                                     </div>
-                                    <div
-                                        class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start" data-aos="fade-up"
-                                        data-aos-anchor-placement="center-bottom">
+                                    <div class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start"
+                                        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/img/33.jpg" class="img-fluid rounded-start"
@@ -2303,9 +2205,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     <hr class="hr2" />
                                 </div>
                                 <div>
-                                    <div
-                                        class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start" data-aos="fade-up"
-                                        data-aos-anchor-placement="center-bottom">
+                                    <div class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start"
+                                        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/img/11.jpg" class="img-fluid rounded-start"
@@ -2334,9 +2235,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start" data-aos="fade-up"
-                                        data-aos-anchor-placement="center-bottom">
+                                    <div class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start"
+                                        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/img/22.jpg" class="img-fluid rounded-start"
@@ -2364,9 +2264,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                         </div>
                                     </div>
-                                    <div
-                                        class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start" data-aos="fade-up"
-                                        data-aos-anchor-placement="center-bottom">
+                                    <div class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start"
+                                        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/img/4-400x400.jpg" class="img-fluid rounded-start"
@@ -2394,9 +2293,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                         </div>
                                     </div>
-                                    <div
-                                        class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start" data-aos="fade-up"
-                                        data-aos-anchor-placement="center-bottom">
+                                    <div class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start"
+                                        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/img/33.jpg" class="img-fluid rounded-start"
@@ -2433,9 +2331,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     <hr class="hr2" />
                                 </div>
                                 <div>
-                                    <div
-                                        class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start" data-aos="fade-up"
-                                        data-aos-anchor-placement="center-bottom">
+                                    <div class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start"
+                                        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/img/11.jpg" class="img-fluid rounded-start"
@@ -2464,9 +2361,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start" data-aos="fade-up"
-                                        data-aos-anchor-placement="center-bottom">
+                                    <div class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start"
+                                        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/img/22.jpg" class="img-fluid rounded-start"
@@ -2494,9 +2390,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                         </div>
                                     </div>
-                                    <div
-                                        class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start" data-aos="fade-up"
-                                        data-aos-anchor-placement="center-bottom">
+                                    <div class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start"
+                                        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/img/4-400x400.jpg" class="img-fluid rounded-start"
@@ -2524,9 +2419,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                         </div>
                                     </div>
-                                    <div
-                                        class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start" data-aos="fade-up"
-                                        data-aos-anchor-placement="center-bottom">
+                                    <div class="card border-0 mt-4  text-center text-lg-start text-md-start text-sm-start"
+                                        data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img src="./assets/img/33.jpg" class="img-fluid rounded-start"
@@ -2577,8 +2471,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                             <div class="col-lg-12">
                                 <div class="owl-carousel owl-theme" id="category_shop">
 
-                                    <div class="item"  data-aos="zoom-in"
-                                    data-aos-delay="300">
+                                    <div class="item" data-aos="zoom-in" data-aos-delay="300">
                                         <div class="bg-light rounded-4 py-5 item_cat">
                                             <img src="./assets/img/icon-1.png" class="w-50 m-auto p-2 img_cat" alt="" />
                                             <div class="text-center p-2">
@@ -2586,8 +2479,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="item"   data-aos="zoom-in"
-                                    data-aos-delay="300">
+                                    <div class="item" data-aos="zoom-in" data-aos-delay="300">
                                         <div class="bg-light rounded-4 py-5 item_cat">
                                             <img src="./assets/img/icon-10.png" class="w-50 m-auto p-2 img_cat"
                                                 alt="" />
@@ -2596,8 +2488,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="item"  data-aos="zoom-in"
-                                    data-aos-delay="300">
+                                    <div class="item" data-aos="zoom-in" data-aos-delay="300">
                                         <div class="bg-light rounded-4 py-5 item_cat">
                                             <img src="./assets/img/icon-11.png" class="w-50 m-auto p-2 img_cat"
                                                 alt="" />
@@ -2606,8 +2497,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="item"  data-aos="zoom-in"
-                                    data-aos-delay="300">
+                                    <div class="item" data-aos="zoom-in" data-aos-delay="300">
                                         <div class="bg-light rounded-4 py-5 item_cat">
                                             <img src="./assets/img/icon-6.png" class="w-50 m-auto p-2 img_cat" alt="" />
                                             <div class="text-center p-2">
@@ -2615,8 +2505,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="item" data-aos="zoom-in"
-                                    data-aos-delay="300">
+                                    <div class="item" data-aos="zoom-in" data-aos-delay="300">
                                         <div class="bg-light rounded-4 py-5 item_cat">
                                             <img src="./assets/img/icon-7.png" class="w-50 m-auto p-2 img_cat" alt="" />
                                             <div class="text-center p-2">
@@ -2624,9 +2513,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="item"  data-aos="zoom-in"
-                                    data-aos-delay="300"
-                                   >
+                                    <div class="item" data-aos="zoom-in" data-aos-delay="300">
                                         <div class="bg-light rounded-4 py-5 item_cat">
                                             <img src="./assets/img/icon-10.png" class="w-50 m-auto p-2 img_cat"
                                                 alt="" />
@@ -2669,9 +2556,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-12" data-aos="fade-up-left"
-                            data-aos-anchor="#example-anchor"
-                            data-aos-offset="3000"
-                            data-aos-duration="3000">
+                                data-aos-anchor="#example-anchor" data-aos-offset="3000" data-aos-duration="3000">
                                 <div>
                                     <img src="./assets/img/newsletter-image.png" class="w-100 h-100" alt="" />
                                 </div>
@@ -2752,8 +2637,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                         <hr class="py-2">
                         <div class="footer_link">
                             <div class="row   ">
-                                <div
-                                    class="col-lg-4 col-12 col-sm-6 col-md-6 col-xl-3 " data-aos="fade-up"
+                                <div class="col-lg-4 col-12 col-sm-6 col-md-6 col-xl-3 " data-aos="fade-up"
                                     data-aos-anchor-placement="top-bottom">
                                     <ul class="list-unstyled ">
                                         <li>
@@ -2784,7 +2668,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     </ul>
                                 </div>
                                 <div class="col-lg-4 col-12 col-sm-6 col-md-6 col-xl-2 " data-aos="fade-up"
-                                data-aos-anchor-placement="top-bottom">
+                                    data-aos-anchor-placement="top-bottom">
                                     <ul class="list-unstyled ">
                                         <li>
                                             <h4>Company</h4>
@@ -2796,7 +2680,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     </ul>
                                 </div>
                                 <div class="col-lg-4 col-12 col-sm-6 col-md-6 col-xl-2" data-aos="fade-up"
-                                data-aos-anchor-placement="top-bottom">
+                                    data-aos-anchor-placement="top-bottom">
                                     <ul class="list-unstyled ">
                                         <li>
                                             <h4>Category</h4>
@@ -2810,7 +2694,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     </ul>
                                 </div>
                                 <div class="col-lg-4 col-12 col-sm-6 col-md-6 col-xl-2 " data-aos="fade-up"
-                                data-aos-anchor-placement="top-bottom">
+                                    data-aos-anchor-placement="top-bottom">
                                     <ul class="list-unstyled ">
                                         <li>
                                             <h4>Information</h4>
@@ -2825,7 +2709,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                                     </ul>
                                 </div>
                                 <div class="col-lg-4 col-12 col-sm-6 col-md-6  col-xl-2 text-center" data-aos="fade-up"
-                                data-aos-anchor-placement="top-bottom">
+                                    data-aos-anchor-placement="top-bottom">
                                     <ul class="list-unstyled ">
                                         <li>
                                             <h6><b>Install App</b></h6>
@@ -2852,9 +2736,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
                         <div class="row">
                             <div class="col-lg-4 col-md-12 col-sm-12 col-12">
                                 <div class=" m-2">
-
                                     <p>Copyright © 2021 Nest all rights reserved. Powered by Botble.</p>
+
                                 </div>
+
                             </div>
                             <div class="col-lg-4 col-md-12 col-sm-12 col-12">
                                 <div class="text-center m-2">
@@ -2907,7 +2792,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     </footer>
 
 
-<script src="./assets/script.js"></script>
+    <script src="./assets/script.js"></script>
 
     <script type="text/javascript" src="product.json"></script>
 
@@ -2915,17 +2800,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- JQUERY -->
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
-    <!-- Swiper JS -->
-    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
 
     <!-- OWL CAROSUL -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
-
-
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
@@ -2934,16 +2813,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
-      </script>
+    </script>
 
-<script>
-
-fetch('product.json')
-            .then(res=>res.json())
-            .then(json=>console.log(json))
-</script>
-
-
+    <script>
+        fetch('product.json')
+            .then(res => res.json())
+            .then(json => console.log(json))
+    </script>
 
     <script>
         /* Open when someone clicks on the span element */
@@ -2958,22 +2834,20 @@ fetch('product.json')
     </script>
 
 
-<script>
-    const nav = document.querySelector('#nav');
-let navTop = nav.offsetTop;
+    <script>
+        const nav = document.querySelector('#nav');
+        let navTop = nav.offsetTop;
 
-function fixedNav() {
-  if (window.scrollY >= navTop) {    
-    nav.classList.add('fixed');
-  } else {
-    nav.classList.remove('fixed');    
-  }
-}
+        function fixedNav() {
+            if (window.scrollY >= navTop) {
+                nav.classList.add('fixed');
+            } else {
+                nav.classList.remove('fixed');
+            }
+        }
 
-window.addEventListener('scroll', fixedNav);
-</script>
-
-
+        window.addEventListener('scroll', fixedNav);
+    </script>
 
     <!-- Initialize Swiper -->
     <script>
@@ -3020,7 +2894,7 @@ window.addEventListener('scroll', fixedNav);
             margin: 10,
             nav: false,
             dots: false,
-            autoplay:true,
+            autoplay: true,
 
 
             responsive: {
@@ -3061,9 +2935,6 @@ window.addEventListener('scroll', fixedNav);
                 },
             },
         });
-
-
-
 
 
         // COUNT DOWN
@@ -3180,9 +3051,8 @@ window.addEventListener('scroll', fixedNav);
             <div class="modal-content">
 
                 <div class="modal-header border-0">
-                  
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="container">
                     <div class="row">
@@ -3190,18 +3060,18 @@ window.addEventListener('scroll', fixedNav);
                             <div class="swiper mySwiper2 py-2">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide border rounded-4">
-                                        <img src="assets/img/1.png" class="rounded-4 border"/>
+                                        <img src="assets/img/1.png" class="rounded-4 border" />
                                     </div>
                                     <div class="swiper-slide border rounded-4">
-                                        <img src="assets/img/2.png" class="rounded-4 border"/>
+                                        <img src="assets/img/2.png" class="rounded-4 border" />
                                     </div>
                                     <div class="swiper-slide border rounded-4">
-                                        <img src="assets/img/4.png" class="rounded-4 border"/>
+                                        <img src="assets/img/4.png" class="rounded-4 border" />
                                     </div>
                                     <div class="swiper-slide border rounded-4">
-                                        <img src="assets/img/5.png" class="rounded-4 border"/>
+                                        <img src="assets/img/5.png" class="rounded-4 border" />
                                     </div>
-                                 
+
                                 </div>
                                 <div class="swiper-button-next"></div>
                                 <div class="swiper-button-prev"></div>
@@ -3209,21 +3079,17 @@ window.addEventListener('scroll', fixedNav);
                             <div thumbsSlider="" class="swiper mySwiper py-2">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide  border rounded-4">
-                                        <img src="assets/img/1.png"  class="rounded-4 border"/>
+                                        <img src="assets/img/1.png" class="rounded-4 border" />
                                     </div>
                                     <div class="swiper-slide  border rounded-4">
-                                        <img src="assets/img/5.png"  class="rounded-4 border"/>
+                                        <img src="assets/img/5.png" class="rounded-4 border" />
                                     </div>
                                     <div class="swiper-slide  border rounded-4">
-                                        <img src="assets/img/4.png"  class="rounded-4 border"/>
+                                        <img src="assets/img/4.png" class="rounded-4 border" />
                                     </div>
                                     <div class="swiper-slide  border rounded-4">
-                                        <img src="assets/img/2.png"  class="rounded-4 border"/>
+                                        <img src="assets/img/2.png" class="rounded-4 border" />
                                     </div>
-                                
-
-
-
 
                                 </div>
                             </div>
@@ -3235,7 +3101,7 @@ window.addEventListener('scroll', fixedNav);
                             <div class="">
                                 <h5 class="modal-title" id="staticBackdropLabel">All Natural Italian-Style Chicken
                                     Meatballs</h5>
-                              
+
                             </div>
 
                             <div class="modal-body">
@@ -3296,9 +3162,6 @@ window.addEventListener('scroll', fixedNav);
                                             </div>
                                         </div>
                                     </div>
-
-
-
                                     <div>
                                         <p class="fs-6">Boxes</p>
 
@@ -3371,12 +3234,8 @@ window.addEventListener('scroll', fixedNav);
                                     <p>Brands: <span><a href="">Perxion</a></span></p>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
