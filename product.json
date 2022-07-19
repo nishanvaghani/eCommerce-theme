@@ -1,0 +1,350 @@
+{ "Productlist": {
+    "Popluar_product": [
+        {
+
+            "Name": "All Natural Italian-Style Chicken Meatballs",
+            "New_rice": "$234.00",
+            "Old_price": "$318.00",
+            "Description": "Short Hooded Coat features a straight body, large pockets with button flaps, ventilation air holes, and a string detail along the hemline",
+            "Image": "./assets/img/2-400x400.jpg",
+            "Sold_by": "Young Shop",
+            "Discount": "-33%"
+        },
+        {
+
+            "Name": "Foster Farms Takeout Crispy Classic",
+            "New_rice": "$27.03",
+            "Old_price": "$90.00",
+            "Description": "Short Hooded Coat features a straight body, large pockets with button flaps, ventilation air holes, and a string detail along the hemline",
+            "Image": "./assets/img/4-400x400.jpg",
+            "Sold_by": "Global Store",
+            "Discount": "-69%"
+
+        },
+        {
+
+            "Name": "Chobani Complete Vanilla Greek",
+            "New_rice": "$51.00",
+            "Old_price": "$60.00",
+            "Description": "Short Hooded Coat features a straight body, large pockets with button flaps, ventilation air holes, and a string detail along the hemline",
+            "Image": "./assets/img/6-400x400.jpg",
+            "Sold_by": "Global Office",
+            "Discount": "-15%"
+
+        },
+        {
+
+            "Name": "Encore Seafoods Stuffed Alaskan",
+            "New_rice": "$68.20",
+            "Old_price": "$122.00",
+            "Description": "Short Hooded Coat features a straight body, large pockets with button flaps, ventilation air holes, and a string detail along the hemline",
+            "Image": "./assets/img/8-400x400.jpg",
+            "Sold_by": "Robert’s Store",
+            "Discount": "-40%"
+        },
+        {
+
+            "Name": "Haagen-Dazs Caramel Cone Ice Cream",
+            "New_rice": "$87.204",
+            "Old_price": "$118.00",
+            "Description": "Short Hooded Coat features a straight body, large pockets with button flaps, ventilation air holes, and a string detail along the hemline",
+            "Image": "./assets/img/10-400x400.jpg",
+            "Sold_by": "GoPro",
+            "Discount": "-30%"
+
+        },
+        {
+
+            "Name": "Naturally Flavored Cinnamon Vanilla Light Roast Coffee",
+            "New_rice": "$38.00",
+            "Old_price": "$88.00",
+            "Description": "Short Hooded Coat features a straight body, large pockets with button flaps, ventilation air holes, and a string detail along the hemline",
+            "Image": "./assets/img/12-400x400.jpg",
+            "Sold_by": "Young Shop",
+            "Discount": "-65%"
+
+        },
+        {
+
+            "Name": "Organic Frozen Triple Berry Blend",
+            "New_rice": "$34.00",
+            "Old_price": "$60.00",
+            "Description": "Short Hooded Coat features a straight body, large pockets with button flaps, ventilation air holes, and a string detail along the hemline",
+            "Image": "./assets/img/14-400x400.jpg",
+            "Sold_by": "GoPro",
+            "Discount": "-40%"
+
+        },
+        {
+
+            "Name": "Foster Farms Takeout Crispy Classic Buffalo Wings",
+            "New_rice": "$90.00",
+            "Old_price": "$180.00",
+            "Description": "Short Hooded Coat features a straight body, large pockets with button flaps, ventilation air holes, and a string detail along the hemline",
+            "Image": "./assets/img/16-400x400.jpg",
+            "Sold_by": "Global Store",
+            "Discount": "-50%"
+
+        }
+    ],
+
+    "Sells_product": [
+        {
+            "Name": "Perdue Simply Smart Organics Gluten Free",
+            "New_rice": "$51.51",
+            "Old_price": "$127.00",
+            "Description": "Short Hooded Coat features a straight body, large pockets with button flaps, ventilation air holes, and a string detail along the hemline",
+            "Image": "./assets/img/20-800x800.jpg",
+            "Sold_by": "GoPro",
+            "Discount": "-59%"
+        },
+        {
+            "Name": "Seeds of Change Organic Quinoe",
+            "New_rice": "$318.78",
+            "Old_price": "$483.00",
+            "Description": "Short Hooded Coat features a straight body, large pockets with button flaps, ventilation air holes, and a string detail along the hemline",
+            "Image": "./assets/img/10-800x800.jpg",
+            "Sold_by": " Young Shop",
+            "Discount": "34% Off"
+        },
+        {
+
+            "Name": "Foster Farms Takeout Crispy Classic Buffalo Wings",
+            "New_rice": "$90.00",
+            "Old_price": "$180.00",
+            "Description": "Short Hooded Coat features a straight body, large pockets with button flaps, ventilation air holes, and a string detail along the hemline",
+            "Image": "./assets/img/16-400x400.jpg",
+            "Sold_by": "Global Store",
+            "Discount": "-50%"
+
+        },
+        {
+
+            "Name": "Organic Frozen Triple Berry Blend",
+            "New_rice": "$34.00",
+            "Old_price": "$60.00",
+            "Description": "Short Hooded Coat features a straight body, large pockets with button flaps, ventilation air holes, and a string detail along the hemline",
+            "Image": "./assets/img/14-400x400.jpg",
+            "Sold_by": "GoPro",
+            "Discount": "-40%"
+
+        },
+        {
+
+            "Name": "Haagen-Dazs Caramel Cone Ice Cream",
+            "New_rice": "$87.204",
+            "Old_price": "$118.00",
+            "Description": "Short Hooded Coat features a straight body, large pockets with button flaps, ventilation air holes, and a string detail along the hemline",
+            "Image": "./assets/img/10-400x400.jpg",
+            "Sold_by": "GoPro",
+            "Discount": "-30%"
+
+        }
+    ],
+    "Deal_day": [
+        {
+            "Name": "Colorful Banana",
+            "New_rice": "$87.204",
+            "Old_price": "$118.00",
+            "Image": "./assets/img/2 (1).png",
+            "Sold_by": "GoPro"
+        },
+        {
+            "Name": "Angie’s Boomchickapop Sweet & Salty Kettle Corn",
+            "New_rice": "$87.204",
+            "Old_price": "$118.00",
+            "Image": "./assets/img/3 (1).png",
+            "Sold_by": "GoPro"
+        },
+        {
+            "Name": "Pepperidge Farm Farmhouse Hearty White Bread",
+            "New_rice": "$87.204",
+            "Old_price": "$118.00",
+            "Image": "./assets/img/4 (1).png",
+            "Sold_by": " Global Store"
+        },
+        {
+            "Name": "Signature Wood-Fired Mushroom and Caramelized",
+            "New_rice": "$87.204",
+            "Old_price": "$118.00",
+            "Image": "./assets/img/5 (1).png",
+            "Sold_by": " Global Store"
+        }
+    ],
+    "Top_Selling_product": [
+        {
+            "Name": "Gorton’s Beer Battered Fish Fillets",
+            "New_rice": "$87.204",
+            "Old_price": "$118.00",
+            "Image": "./assets/img/11.png"
+
+        },
+        {
+            "Name": "Haagen-Dazs Caramel Cone Ice Cream",
+            "New_rice": "$87.204",
+            "Old_price": "$118.00",
+            "Image": "./assets/img/11.png"
+
+        },
+        {
+            "Name": "Perdue Simply Smart Organics Gluten Free",
+            "New_rice": "$87.204",
+            "Old_price": "$118.00",
+            "Image": "./assets/img/11.png"
+
+        },
+        {
+            "Name": "Nestle Original Coffee-Mate Coffee Creamer",
+            "New_rice": "$87.204",
+            "Old_price": "$118.00",
+            "Image": "./assets/img/11.png"
+
+        }
+    ],
+    "Tredding_product": [
+        {
+        "Name": "Gorton’s Beer Battered Fish Fillets",
+        "New_rice": "$87.204",
+        "Old_price": "$118.00",
+        "Image": "./assets/img/11.png"
+
+        },
+        {
+            "Name": "Haagen-Dazs Caramel Cone Ice Cream",
+            "New_rice": "$87.204",
+            "Old_price": "$118.00",
+            "Image": "./assets/img/11.png"
+
+        },
+        {
+            "Name": "Perdue Simply Smart Organics Gluten Free",
+            "New_rice": "$87.204",
+            "Old_price": "$118.00",
+            "Image": "./assets/img/11.png"
+
+        },
+        {
+            "Name": "Nestle Original Coffee-Mate Coffee Creamer",
+            "New_rice": "$87.204",
+            "Old_price": "$118.00",
+            "Image": "./assets/img/11.png"
+
+        }
+    ],
+"Recent_product": [
+    {
+        "Name": "Gorton’s Beer Battered Fish Fillets",
+        "New_rice": "$87.204",
+        "Old_price": "$118.00",
+        "Image": "./assets/img/11.png"
+
+    },
+    {
+        "Name": "Haagen-Dazs Caramel Cone Ice Cream",
+        "New_rice": "$87.204",
+        "Old_price": "$118.00",
+        "Image": "./assets/img/11.png"
+
+    },
+    {
+        "Name": "Perdue Simply Smart Organics Gluten Free",
+        "New_rice": "$87.204",
+        "Old_price": "$118.00",
+        "Image": "./assets/img/11.png"
+
+    },
+    {
+        "Name": "Nestle Original Coffee-Mate Coffee Creamer",
+        "New_rice": "$87.204",
+        "Old_price": "$118.00",
+        "Image": "./assets/img/11.png"
+
+    }
+],
+
+"Top_rated_product": [{
+    "Name": "Gorton’s Beer Battered Fish Fillets",
+    "New_rice": "$87.204",
+    "Old_price": "$118.00",
+    "Image": "./assets/img/11.png"
+
+},
+{
+    "Name": "Haagen-Dazs Caramel Cone Ice Cream",
+    "New_rice": "$87.204",
+    "Old_price": "$118.00",
+    "Image": "./assets/img/11.png"
+
+},
+{
+    "Name": "Perdue Simply Smart Organics Gluten Free",
+    "New_rice": "$87.204",
+    "Old_price": "$118.00",
+    "Image": "./assets/img/11.png"
+
+},
+{
+    "Name": "Nestle Original Coffee-Mate Coffee Creamer",
+    "New_rice": "$87.204",
+    "Old_price": "$118.00",
+    "Image": "./assets/img/11.png"
+
+}
+],
+"Catrgories": [{
+    "Name": "Cake Milk",
+    "Image": "./assets/img/icon-11.png"
+
+},
+{
+    "Name": "Pet Food",    
+    "Image": "./assets/img/icon-6.png"
+
+
+},
+{
+    "Name": "Bread & Juice",
+    "Image": "./assets/img/icon-9.png"
+
+},
+{
+    "Name": "Coffee & Teas",
+    "Image": "./assets/img/icon-13.png"
+
+},
+{
+    "Name": "Vegetables",
+    "Image": "./assets/img/icon-12.png"
+
+},
+{
+    "Name": "Fast Foods",
+    "Image": "./assets/img/icon-1.png"
+
+},
+{
+    "Name": "Wines & Drinks",
+    "Image": "./assets/img/icon-2.png"
+
+},
+{
+    "Name": "Sea Foods",
+    "Image": "./assets/img/icon-4.png"
+
+},
+{
+    "Name": "Fresh Fruits",
+    "Image": "./assets/img/icon-7.png"
+
+},
+{
+    "Name": "Pet Toy",
+    "Image": "./assets/img/icon-8.png"
+
+}
+]
+
+
+
+
+}}
