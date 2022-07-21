@@ -8,5 +8,6 @@ eCommerce template using:
 - OWL CAROUSEL - 2.3.4
 - SWIPER JS
 - FONT AWESOME - 6.1.1
+- JAVASCRIPT
 
 Testing URL: https://nishanvaghani.github.io/eCommerce-theme/
